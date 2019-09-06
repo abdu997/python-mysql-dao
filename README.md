@@ -10,7 +10,7 @@ $ pip3 install -r requirments.txt
 ```
 
 ## Setup
-Create a `confit.py` and insert the bottom code, with your database credentials. This file is git ignored, you will have to create this file for every environment setup.
+Create a `config.py` and insert the bottom code, with your database credentials. This file is git ignored, you will have to create this file for every environment setup.
 
 ```python
 MYSQL = {
