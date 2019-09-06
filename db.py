@@ -38,7 +38,8 @@ def fetchone(query):
     mycursor = mydb.cursor()
     mycursor.execute(query)
     columns = [col[0] for col in mycursor.description]
-    result = {}
-    for i, col in enumerate(columns):
-        result[col] = mycursor.fetchone()[i]
-    return result
+    result = mycursor.fetchone()
+    row = {}
+    for i, x in enumerate(result):
+        row[columns[i]] = x
+    return row
