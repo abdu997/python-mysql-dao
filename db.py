@@ -10,18 +10,20 @@ mydb = mysql.connector.connect(
 )
 
 def execute(query, values=None):
+    mycursor = mydb.cursor()
     if values == None:
-        mydb.cursor().execute(query)
+        mycursor.execute(query)
     else:
-        mydb.cursor().execute(query, values)
+        mycursor.execute(query, values)
     mydb.commit()
     return mycursor
 
 def executemany(query, values=None):
+    mycursor = mydb.cursor()
     if values == None:
-        mydb.cursor().executemany(query)
+        mycursor.executemany(query)
     else:
-        mydb.cursor().executemany(query, values)
+        mycursor.executemany(query, values)
     mydb.commit()
     return mycursor
 
